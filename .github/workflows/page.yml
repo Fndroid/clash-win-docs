@@ -1,0 +1,36 @@
+name: Page on Push
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "10"
+
+      - name: Install github-cli
+        run: npm install gitbook-cli
+
+      - name: Install Dependencies
+        run: npm run dep
+
+      - name: Build assets
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v1
+        with:
+          target_branch: gh-pages
+          build_dir: _book
+        env:
+          GITHUB_PAT: ${{ secrets.ACCESS_TOKEN }}

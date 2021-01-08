@@ -1,0 +1,16 @@
+{
+  "name": "clash-win-docs",
+  "version": "0.1.0",
+  "dependencies": {
+    "gitbook-cli": "^2.3.2",
+    "gitbook-plugin-favicon": "0.0.2",
+    "gitbook-plugin-ga": "^1.0.1",
+    "gitbook-plugin-github": "^2.0.0",
+    "gitbook-plugin-hints": "^1.0.2"
+  },
+  "scripts": {
+    "dep": "node node_modules/gitbook-cli/bin/gitbook.js install",
+    "build": "node node_modules/gitbook-cli/bin/gitbook.js build && echo docs.cfw.lbyczf.com >> _book/CNAME",
+    "serve": "node node_modules/gitbook-cli/bin/gitbook.js serve"
+  }
+}
