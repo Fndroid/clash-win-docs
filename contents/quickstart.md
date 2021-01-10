@@ -6,7 +6,7 @@
 
 首次启动Clash for Windows后会出现下图所示界面代表启动成功：
 
-![](../assets/quickstart1.png)
+![](../assets/quickstart1_new.png)
 
 ### 导入配置文件
 
